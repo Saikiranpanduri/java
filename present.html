@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Login Page -->
+    <div id="login-container" class="container">
+        <h1>Login</h1>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+            <p id="login-error" class="error hidden">Invalid username or password</p>
+        </form>
+    </div>
+
+    <!-- Main Menu -->
+    <div id="main-container" class="container hidden">
+        <h1>Main Menu</h1>
+        <button id="add-students-btn">Add Students</button>
+        <button id="attendance-marking-btn">Mark Attendance</button>
+        <button id="remove-students-btn">Remove Students</button>
+    </div>
+
+    <!-- Add Students Page -->
+    <div id="add-students-container" class="container hidden">
+        <h1>Add Students</h1>
+        <div class="input-group">
+            <label for="class-select">Select Class:</label>
+            <select id="class-select">
+                <option value="10">Class 10</option>
+                <option value="11">Class 11</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="student-name">Student Name:</label>
+            <input type="text" id="student-name">
+        </div>
+        <button id="add-student-btn">Add Student</button>
+        <button id="back-to-main">Back to Main Menu</button>
+        <h2>Student List</h2>
+        <div id="student-list-class"></div>
+    </div>
+
+    <!-- Attendance Marking Page -->
+    <div id="attendance-container" class="container hidden">
+        <nav>
+            <ul>
+                <li><a href="#" class="class-select" data-class="10">Class 10</a></li>
+                <li><a href="#" class="class-select" data-class="11">Class 11</a></li>
+            </ul>
+        </nav>
+        <div class="input-group">
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+        <div id="student-list-container" class="hidden">
+            <h2>Mark Attendance</h2>
+            <form id="student-attendance-form">
+                <div id="student-list"></div>
+                <button type="submit">Submit Attendance</button>
+            </form>
+        </div>
+        <div id="attendance-results" class="hidden">
+            <h2>Absent Students</h2>
+            <div id="absent-list">
+                <ul></ul>
+            </div>
+            <button id="back-to-login">Back to Login</button>
+        </div>
+    </div>
+
+    <!-- Remove Students Page -->
+    <div id="remove-students-container" class="container hidden">
+        <h1>Remove Students</h1>
+        <div class="input-group">
+            <label for="remove-class-select">Select Class:</label>
+            <select id="remove-class-select">
+                <option value="10">Class 10</option>
+                <option value="11">Class 11</option>
+            </select>
+        </div>
+        <div id="remove-student-list"></div>
+        <button id="back-to-main-from-remove">Back to Main Menu</button>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
